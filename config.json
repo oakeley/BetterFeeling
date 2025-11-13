@@ -1,0 +1,44 @@
+{
+  "ollama": {
+    "model": "qwen3:4b",
+    "base_url": "http://localhost:11434",
+    "embedding_model": "nomic-embed-text"
+  },
+  "api_limits": {
+    "data_gouv_fr": {
+      "requests_per_minute": 60,
+      "requests_per_hour": 1000
+    },
+    "hetio": {
+      "requests_per_minute": 30,
+      "requests_per_hour": 500
+    },
+    "kegg": {
+      "requests_per_minute": 10,
+      "requests_per_hour": 100
+    }
+  },
+  "server": {
+    "host": "localhost",
+    "port": 9999,
+    "debug": true
+  },
+  "paths": {
+    "cache_dir": "./data/cache",
+    "graph_db": "./data/graph.db",
+    "vector_db": "./data/vectors",
+    "logs_dir": "./logs",
+    "log_file": "./logs/app.log",
+    "static_dir": "./static",
+    "templates_dir": "./templates"
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  "urls": {
+    "data_gouv_base": "https://www.data.gouv.fr/api/1",
+    "data_gouv_dataset": "evaluation-des-medicaments",
+    "hetio_base": "https://het.io/v1"
+  }
+}

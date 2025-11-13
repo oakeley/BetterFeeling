@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graph Visualization Test</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { margin: 20px; font-family: Arial; }
+        #graph { border: 2px solid #333; }
+        .link { stroke: #999; stroke-width: 2px; }
+        .node circle { fill: #69b3a2; stroke: #fff; stroke-width: 2px; cursor: pointer; }
+        .node text { font-size: 12px; pointer-events: none; }
+        .node:hover circle { fill: #ff6b6b; }
+        #info { margin-top: 20px; padding: 10px; background: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h1>Graph Visualization Test</h1>
+    <p>Testing D3.js graph with disease/target data from API</p>
+    <button onclick="loadData()">Load Graph Data</button>
+    <button onclick="testClicks()">Test Clicks</button>
+    <div id="info">Status: Click "Load Graph Data" to start</div>
+    <svg id="graph" width="1200" height="600"></svg>
+
+    <script>
+        let graphData = null;
+
+        async function loadData() {
+            document.getElementById('info').textContent = 'Loading data from API...';
+            try {
+                const response = await fetch('http://localhost:9999/api/graph?type=disease&limit=15');
+                graphData = await response.json();
+                document.getElementById('info').innerHTML =
+                    `Loaded: ${graphData.nodes.length} nodes, ${graphData.links.length} edges<br>` +
+                    `Nodes: ${graphData.nodes.map(n => n.name || n.id).join(', ')}`;
+                renderGraph();
+            } catch (error) {
+                document.getElementById('info').textContent = 'Error: ' + error.message;
+            }
+        }
+
+        function renderGraph() {
+            const svg = d3.select('#graph');
+            const width = 1200;
+            const height = 600;
+
+            svg.selectAll('*').remove();
+
+            const g = svg.append('g');
+
+            const simulation = d3.forceSimulation(graphData.nodes)
+                .force('link', d3.forceLink(graphData.links).id(d => d.id).distance(150))
+                .force('charge', d3.forceManyBody().strength(-400))
+                .force('center', d3.forceCenter(width / 2, height / 2))
+                .force('collision', d3.forceCollide().radius(50));
+
+            const link = g.append('g')
+                .selectAll('line')
+                .data(graphData.links)
+                .enter().append('line')
+                .attr('class', 'link')
+                .attr('stroke', '#999')
+                .attr('stroke-width', 2);
+
+            const node = g.append('g')
+                .selectAll('g')
+                .data(graphData.nodes)
+                .enter().append('g')
+                .attr('class', 'node')
+                .on('click', (event, d) => {
+                    document.getElementById('info').innerHTML =
+                        `<strong>Clicked Node:</strong><br>` +
+                        `ID: ${d.id}<br>` +
+                        `Name: ${d.name || 'N/A'}<br>` +
+                        `Type: ${d.type || 'N/A'}<br>` +
+                        JSON.stringify(d, null, 2);
+                    console.log('Node clicked:', d);
+                })
+                .call(d3.drag()
+                    .on('start', dragstarted)
+                    .on('drag', dragged)
+                    .on('end', dragended));
+
+            node.append('circle')
+                .attr('r', 15)
+                .attr('fill', '#69b3a2');
+
+            node.append('text')
+                .attr('dx', 20)
+                .attr('dy', 5)
+                .text(d => d.name || d.id.substring(0, 20));
+
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+
+                node.attr('transform', d => `translate(${d.x},${d.y})`);
+            });
+
+            function dragstarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+
+            function dragended(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+        }
+
+        function testClicks() {
+            document.getElementById('info').textContent =
+                'Click detection test: Click on any node circle to see its data';
+        }
+    </script>
+</body>
+</html>

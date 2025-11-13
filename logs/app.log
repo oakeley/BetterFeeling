@@ -1,0 +1,1119 @@
+2025-11-13 11:44:20,326 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 11:44:20,326 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 11:44:20,326 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 11:44:23,001 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 11:44:23,001 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 11:44:23,531 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:44:23,582 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:44:23,582 - rag_system - INFO - Starting with empty graph
+2025-11-13 11:44:23,582 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 11:44:23,594 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 11:44:23,594 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 11:44:23,594 - __main__ - INFO - Application initialized successfully
+2025-11-13 11:44:23,597 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 11:44:23,602 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:9999
+2025-11-13 11:44:23,602 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-13 11:44:23,602 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 11:44:24,869 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 11:44:24,869 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 11:44:24,869 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 11:44:27,003 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 11:44:27,003 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 11:44:27,059 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:44:27,060 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:44:27,060 - rag_system - INFO - Starting with empty graph
+2025-11-13 11:44:27,060 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 11:44:27,074 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 11:44:27,075 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 11:44:27,075 - __main__ - INFO - Application initialized successfully
+2025-11-13 11:44:27,076 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 11:44:27,080 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 11:44:27,081 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 11:44:29,252 - __main__ - INFO - Stats requested: {'graph_nodes': 0, 'graph_edges': 0, 'vector_documents': 0, 'node_types': {}}
+2025-11-13 11:44:29,253 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:44:29] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 11:44:35,179 - __main__ - INFO - Data fetch requested for source: kegg
+2025-11-13 11:44:52,666 - data_fetchers - INFO - Fetched 24684 pathways for organism hsa
+2025-11-13 11:45:01,789 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionAddEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:45:02,026 - rag_system - INFO - Saved graph with 10 nodes and 0 edges
+2025-11-13 11:45:02,026 - rag_system - INFO - RAG system saved to disk
+2025-11-13 11:45:02,026 - __main__ - INFO - Data fetched and saved: {'kegg': {'pathways': 10}}
+2025-11-13 11:45:02,027 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:45:02] "POST /api/fetch_data HTTP/1.1" 200 -
+2025-11-13 11:45:08,395 - __main__ - INFO - Stats requested: {'graph_nodes': 10, 'graph_edges': 0, 'vector_documents': 10, 'node_types': {'pathway': 10}}
+2025-11-13 11:45:08,396 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:45:08] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 11:45:08,529 - __main__ - INFO - Graph data requested: 5 nodes, 0 edges
+2025-11-13 11:45:08,529 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:45:08] "GET /api/graph?type=pathway&limit=5 HTTP/1.1" 200 -
+2025-11-13 11:45:08,683 - __main__ - INFO - Data fetch requested for source: hetio
+2025-11-13 11:45:09,055 - data_fetchers - ERROR - Error fetching diseases from hetio: 404 Client Error: Not Found for url: https://het.io/v1/nodes/Disease
+2025-11-13 11:45:09,409 - data_fetchers - ERROR - Error fetching compounds from hetio: 404 Client Error: Not Found for url: https://het.io/v1/nodes/Compound
+2025-11-13 11:45:09,410 - rag_system - INFO - Saved graph with 10 nodes and 0 edges
+2025-11-13 11:45:09,410 - rag_system - INFO - RAG system saved to disk
+2025-11-13 11:45:09,410 - __main__ - INFO - Data fetched and saved: {'hetio': {'diseases': 0, 'compounds': 0}}
+2025-11-13 11:45:09,410 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:45:09] "POST /api/fetch_data HTTP/1.1" 200 -
+2025-11-13 11:45:16,617 - __main__ - INFO - Query received: What pathways are in the database?
+2025-11-13 11:45:16,630 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:45:16,631 - rag_system - INFO - Query returned 5 results
+2025-11-13 11:45:16,631 - ollama_client - INFO - Using 5 context documents for RAG query
+2025-11-13 11:45:31,064 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 11:45:31,065 - ollama_client - INFO - Generated response of length 2552
+2025-11-13 11:45:31,065 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:45:31] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 11:45:40,139 - clustering - INFO - K-means clustering produced 3 clusters
+2025-11-13 11:45:40,140 - rag_system - INFO - Saved graph with 10 nodes and 0 edges
+2025-11-13 11:45:40,140 - rag_system - INFO - RAG system saved to disk
+2025-11-13 11:45:40,140 - __main__ - INFO - Clustering completed: 10 nodes in 1 clusters
+2025-11-13 11:45:40,140 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:45:40] "POST /api/cluster HTTP/1.1" 200 -
+2025-11-13 11:45:40,277 - clustering - INFO - Filtered 5 nodes by keyword 'CDS'
+2025-11-13 11:45:40,277 - __main__ - INFO - Filter applied: 5 nodes match criteria
+2025-11-13 11:45:40,278 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:45:40] "POST /api/filter HTTP/1.1" 200 -
+2025-11-13 11:45:40,433 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:45:40] "GET / HTTP/1.1" 200 -
+2025-11-13 11:47:14,567 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:47:14] "GET / HTTP/1.1" 200 -
+2025-11-13 11:47:15,368 - __main__ - INFO - Graph data requested: 10 nodes, 0 edges
+2025-11-13 11:47:15,369 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:47:15] "GET /api/graph?type=&limit=100 HTTP/1.1" 200 -
+2025-11-13 11:47:15,369 - __main__ - INFO - Stats requested: {'graph_nodes': 10, 'graph_edges': 0, 'vector_documents': 10, 'node_types': {'pathway': 10}}
+2025-11-13 11:47:15,369 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:47:15] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 11:47:15,375 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:47:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-13 11:48:50,246 - __main__ - INFO - Query received: Please show me the disease targets and potential therapies for obesity
+2025-11-13 11:48:50,259 - rag_system - INFO - Query returned 5 results
+2025-11-13 11:48:50,259 - ollama_client - INFO - Using 5 context documents for RAG query
+2025-11-13 11:48:54,125 - __main__ - INFO - Query received: Please show me the disease targets and potential therapies for obesity
+2025-11-13 11:48:54,138 - rag_system - INFO - Query returned 5 results
+2025-11-13 11:48:54,138 - ollama_client - INFO - Using 5 context documents for RAG query
+2025-11-13 11:49:10,475 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 11:49:10,475 - ollama_client - INFO - Generated response of length 5493
+2025-11-13 11:49:10,475 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:49:10] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 11:49:33,335 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 11:49:33,336 - ollama_client - INFO - Generated response of length 6283
+2025-11-13 11:49:33,336 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:49:33] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 11:52:02,255 - __main__ - INFO - Query received: Please show me the disease targets and potential therapies for obesity
+2025-11-13 11:52:02,267 - rag_system - INFO - Query returned 5 results
+2025-11-13 11:52:02,267 - ollama_client - INFO - Using 5 context documents for RAG query
+2025-11-13 11:52:22,670 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 11:52:22,671 - ollama_client - INFO - Generated response of length 5394
+2025-11-13 11:52:22,671 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:52:22] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 11:53:52,589 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/populate_data.py', reloading
+2025-11-13 11:53:52,946 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 11:53:54,215 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 11:53:54,215 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 11:53:54,215 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 11:53:56,375 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 11:53:56,375 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 11:53:56,435 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:53:56,436 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:53:56,436 - rag_system - INFO - Loaded graph with 10 nodes and 0 edges
+2025-11-13 11:53:56,436 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 11:53:56,449 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 11:53:56,449 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 11:53:56,449 - __main__ - INFO - Application initialized successfully
+2025-11-13 11:53:56,450 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 11:53:56,455 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 11:53:56,455 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 11:55:41,978 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 11:55:41,979 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 11:55:41,979 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 11:55:44,163 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 11:55:44,164 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 11:55:44,216 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:55:44,217 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:55:44,217 - rag_system - INFO - Loaded graph with 37 nodes and 2 edges
+2025-11-13 11:55:44,217 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 11:55:44,229 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 11:55:44,229 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 11:55:44,229 - __main__ - INFO - Application initialized successfully
+2025-11-13 11:55:44,231 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 11:55:45,161 - __main__ - INFO - Stats requested: {'graph_nodes': 10, 'graph_edges': 0, 'vector_documents': 37, 'node_types': {'pathway': 10}}
+2025-11-13 11:55:45,161 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:55:45] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 11:55:45,301 - __main__ - INFO - Query received: What are the therapeutic targets for obesity?
+2025-11-13 11:55:45,438 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:55:45,438 - rag_system - INFO - Query returned 5 results
+2025-11-13 11:55:45,439 - ollama_client - INFO - Using 5 context documents for RAG query
+2025-11-13 11:55:51,880 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 11:55:51,880 - ollama_client - INFO - Generated response of length 1320
+2025-11-13 11:55:51,880 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:55:51] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 11:56:07,144 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 11:56:07,144 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 11:56:07,144 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 11:56:09,337 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 11:56:09,337 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 11:56:09,385 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:56:09,386 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:56:09,386 - rag_system - INFO - Loaded graph with 37 nodes and 2 edges
+2025-11-13 11:56:09,386 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 11:56:09,397 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 11:56:09,397 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 11:56:09,397 - __main__ - INFO - Application initialized successfully
+2025-11-13 11:56:09,398 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 11:56:11,119 - __main__ - INFO - Stats requested: {'graph_nodes': 10, 'graph_edges': 0, 'vector_documents': 37, 'node_types': {'pathway': 10}}
+2025-11-13 11:56:11,120 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:56:11] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 11:56:33,157 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 11:56:33,157 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 11:56:33,157 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 11:56:35,394 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 11:56:35,394 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 11:56:35,450 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:56:35,450 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:56:35,451 - rag_system - INFO - Loaded graph with 37 nodes and 2 edges
+2025-11-13 11:56:35,451 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 11:56:35,463 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 11:56:35,463 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 11:56:35,463 - __main__ - INFO - Application initialized successfully
+2025-11-13 11:56:35,465 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 11:56:35,469 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:9999
+2025-11-13 11:56:35,469 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-13 11:56:35,469 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 11:56:36,669 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 11:56:36,669 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 11:56:36,670 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 11:56:38,902 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 11:56:38,902 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 11:56:38,959 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:56:38,960 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:56:38,961 - rag_system - INFO - Loaded graph with 37 nodes and 2 edges
+2025-11-13 11:56:38,961 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 11:56:38,974 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 11:56:38,974 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 11:56:38,974 - __main__ - INFO - Application initialized successfully
+2025-11-13 11:56:38,975 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 11:56:38,980 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 11:56:38,980 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 11:58:36,474 - __main__ - INFO - Stats requested: {'graph_nodes': 37, 'graph_edges': 2, 'vector_documents': 37, 'node_types': {'pathway': 10, 'disease': 23, 'target': 4}}
+2025-11-13 11:58:36,474 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:58:36] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 11:58:46,401 - __main__ - INFO - Query received: What are potential therapies for obesity?
+2025-11-13 11:58:46,542 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 11:58:46,543 - rag_system - INFO - Query returned 5 results
+2025-11-13 11:58:46,543 - ollama_client - INFO - Using 5 context documents for RAG query
+2025-11-13 11:59:12,255 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 11:59:12,255 - ollama_client - INFO - Generated response of length 5555
+2025-11-13 11:59:12,255 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:59:12] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 11:59:12,417 - __main__ - INFO - Graph data requested: 10 nodes, 0 edges
+2025-11-13 11:59:12,417 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:59:12] "GET /api/graph?type=disease&limit=10 HTTP/1.1" 200 -
+2025-11-13 11:59:12,589 - __main__ - INFO - Graph data requested: 4 nodes, 0 edges
+2025-11-13 11:59:12,589 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:59:12] "GET /api/graph?type=target HTTP/1.1" 200 -
+2025-11-13 11:59:34,437 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:59:34] "GET / HTTP/1.1" 200 -
+2025-11-13 11:59:34,664 - __main__ - INFO - Graph data requested: 37 nodes, 2 edges
+2025-11-13 11:59:34,665 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:59:34] "GET /api/graph?type=&limit=100 HTTP/1.1" 200 -
+2025-11-13 11:59:34,665 - __main__ - INFO - Stats requested: {'graph_nodes': 37, 'graph_edges': 2, 'vector_documents': 37, 'node_types': {'pathway': 10, 'disease': 23, 'target': 4}}
+2025-11-13 11:59:34,665 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:59:34] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 11:59:39,288 - __main__ - INFO - Query received: Please show me the disease targets and potential therapies for obesity
+2025-11-13 11:59:39,302 - rag_system - INFO - Query returned 5 results
+2025-11-13 11:59:39,302 - ollama_client - INFO - Using 5 context documents for RAG query
+2025-11-13 11:59:44,601 - __main__ - INFO - Stats requested: {'graph_nodes': 37, 'graph_edges': 2, 'vector_documents': 37, 'node_types': {'pathway': 10, 'disease': 23, 'target': 4}}
+2025-11-13 11:59:44,601 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:59:44] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 11:59:50,393 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 11:59:50,394 - ollama_client - INFO - Generated response of length 2158
+2025-11-13 11:59:50,394 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 11:59:50] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:03:34,190 - __main__ - INFO - Data fetch requested for source: hetio
+2025-11-13 12:03:34,431 - data_fetchers - ERROR - Error fetching diseases from hetio: 404 Client Error: Not Found for url: https://het.io/v1/nodes/Disease
+2025-11-13 12:03:34,669 - data_fetchers - ERROR - Error fetching compounds from hetio: 404 Client Error: Not Found for url: https://het.io/v1/nodes/Compound
+2025-11-13 12:03:34,671 - rag_system - INFO - Saved graph with 37 nodes and 2 edges
+2025-11-13 12:03:34,671 - rag_system - INFO - RAG system saved to disk
+2025-11-13 12:03:34,671 - __main__ - INFO - Data fetched and saved: {'hetio': {'diseases': 0, 'compounds': 0}}
+2025-11-13 12:03:34,671 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:03:34] "POST /api/fetch_data HTTP/1.1" 200 -
+2025-11-13 12:03:34,677 - __main__ - INFO - Stats requested: {'graph_nodes': 37, 'graph_edges': 2, 'vector_documents': 37, 'node_types': {'pathway': 10, 'disease': 23, 'target': 4}}
+2025-11-13 12:03:34,677 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:03:34] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 12:03:34,681 - __main__ - INFO - Graph data requested: 37 nodes, 2 edges
+2025-11-13 12:03:34,682 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:03:34] "GET /api/graph?type=&limit=100 HTTP/1.1" 200 -
+2025-11-13 12:03:47,740 - __main__ - INFO - Graph data requested: 37 nodes, 2 edges
+2025-11-13 12:03:47,740 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:03:47] "GET /api/graph?limit=50 HTTP/1.1" 200 -
+2025-11-13 12:03:49,164 - __main__ - INFO - Query received: List all diseases in the database
+2025-11-13 12:03:49,177 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:03:49,177 - ollama_client - INFO - Using 5 context documents for RAG query
+2025-11-13 12:03:54,719 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:03:54,720 - ollama_client - INFO - Generated response of length 651
+2025-11-13 12:03:54,720 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:03:54] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:04:56,178 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:04:56,178 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:04:56,178 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:04:58,452 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:04:58,452 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:04:58,508 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:04:58,509 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:04:58,509 - rag_system - INFO - Loaded graph with 37 nodes and 19 edges
+2025-11-13 12:04:58,509 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:04:58,522 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:04:58,522 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:04:58,522 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:04:58,523 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:04:58,527 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:9999
+2025-11-13 12:04:58,527 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-13 12:04:58,527 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 12:04:59,772 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:04:59,772 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:04:59,772 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:05:01,997 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:05:01,997 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:05:02,048 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:05:02,049 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:05:02,049 - rag_system - INFO - Loaded graph with 37 nodes and 19 edges
+2025-11-13 12:05:02,049 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:05:02,061 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:05:02,061 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:05:02,061 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:05:02,062 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:05:02,066 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 12:05:02,066 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 12:07:00,667 - __main__ - INFO - Stats requested: {'graph_nodes': 37, 'graph_edges': 19, 'vector_documents': 37, 'node_types': {'pathway': 10, 'disease': 23, 'target': 4}}
+2025-11-13 12:07:00,668 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:07:00] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 12:07:00,853 - __main__ - INFO - Graph data requested: 15 nodes, 9 edges
+2025-11-13 12:07:00,853 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:07:00] "GET /api/graph?type=disease&limit=15 HTTP/1.1" 200 -
+2025-11-13 12:07:01,050 - __main__ - INFO - Query received: How are obesity and diabetes related?
+2025-11-13 12:07:01,185 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:07:01,185 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:07:01,185 - ollama_client - INFO - Using 5 context documents for RAG query
+2025-11-13 12:07:13,042 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:07:13,042 - ollama_client - INFO - Generated response of length 2691
+2025-11-13 12:07:13,042 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:07:13] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:07:39,478 - __main__ - INFO - Graph data requested: 10 nodes, 0 edges
+2025-11-13 12:07:39,479 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:07:39] "GET /api/graph?limit=10 HTTP/1.1" 200 -
+2025-11-13 12:08:00,549 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/app.py', reloading
+2025-11-13 12:08:00,934 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 12:08:02,160 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:08:02,160 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:08:02,160 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:08:04,446 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:08:04,446 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:08:04,503 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:08:04,504 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:08:04,504 - rag_system - INFO - Loaded graph with 37 nodes and 19 edges
+2025-11-13 12:08:04,504 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:08:04,518 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:08:04,518 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:08:04,518 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:08:04,520 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:08:04,525 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 12:08:04,525 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 12:08:13,016 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:08:13,017 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:08:13,017 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:08:15,310 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:08:15,310 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:08:15,360 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:08:15,361 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:08:15,361 - rag_system - INFO - Loaded graph with 37 nodes and 19 edges
+2025-11-13 12:08:15,361 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:08:15,372 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:08:15,372 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:08:15,372 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:08:15,373 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:08:15,377 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:9999
+2025-11-13 12:08:15,377 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-13 12:08:15,378 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 12:08:16,592 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:08:16,593 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:08:16,593 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:08:18,812 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:08:18,812 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:08:18,869 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:08:18,870 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:08:18,870 - rag_system - INFO - Loaded graph with 37 nodes and 19 edges
+2025-11-13 12:08:18,871 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:08:18,883 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:08:18,883 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:08:18,883 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:08:18,884 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:08:18,888 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 12:08:18,888 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 12:08:19,331 - __main__ - INFO - Graph data requested: 11 nodes, 5 edges
+2025-11-13 12:08:19,331 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:08:19] "GET /api/graph?limit=10 HTTP/1.1" 200 -
+2025-11-13 12:09:06,705 - __main__ - INFO - Graph data requested: 26 nodes, 16 edges
+2025-11-13 12:09:06,705 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:09:06] "GET /api/graph?type=disease&limit=20 HTTP/1.1" 200 -
+2025-11-13 12:09:06,860 - __main__ - INFO - Stats requested: {'graph_nodes': 37, 'graph_edges': 19, 'vector_documents': 37, 'node_types': {'pathway': 10, 'disease': 23, 'target': 4}}
+2025-11-13 12:09:06,860 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:09:06] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 12:09:07,192 - __main__ - INFO - Stats requested: {'graph_nodes': 37, 'graph_edges': 19, 'vector_documents': 37, 'node_types': {'pathway': 10, 'disease': 23, 'target': 4}}
+2025-11-13 12:09:07,192 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:09:07] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 12:09:07,202 - __main__ - INFO - Graph data requested: 18 nodes, 15 edges
+2025-11-13 12:09:07,202 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:09:07] "GET /api/graph?type=disease&limit=10 HTTP/1.1" 200 -
+2025-11-13 12:17:36,018 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:17:36] "GET / HTTP/1.1" 200 -
+2025-11-13 12:17:36,244 - __main__ - INFO - Graph data requested: 37 nodes, 19 edges
+2025-11-13 12:17:36,244 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:17:36] "GET /api/graph?type=&limit=100 HTTP/1.1" 200 -
+2025-11-13 12:17:36,244 - __main__ - INFO - Stats requested: {'graph_nodes': 37, 'graph_edges': 19, 'vector_documents': 37, 'node_types': {'pathway': 10, 'disease': 23, 'target': 4}}
+2025-11-13 12:17:36,245 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:17:36] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 12:17:36,250 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:17:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-13 12:18:36,139 - __main__ - INFO - Data fetch requested for source: kegg
+2025-11-13 12:18:53,524 - data_fetchers - INFO - Fetched 24684 pathways for organism hsa
+2025-11-13 12:18:53,668 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:102466751
+2025-11-13 12:18:53,669 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: hsa:102466751
+2025-11-13 12:18:53,684 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionAddEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:18:53,696 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:100302278
+2025-11-13 12:18:53,696 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: hsa:100302278
+2025-11-13 12:18:53,715 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:79501
+2025-11-13 12:18:53,715 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: hsa:79501
+2025-11-13 12:18:53,734 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:102465909
+2025-11-13 12:18:53,734 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: hsa:102465909
+2025-11-13 12:18:53,753 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:112268260
+2025-11-13 12:18:53,753 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: hsa:112268260
+2025-11-13 12:18:53,771 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:729759
+2025-11-13 12:18:53,772 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: hsa:729759
+2025-11-13 12:18:53,790 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:124904706
+2025-11-13 12:18:53,790 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: hsa:124904706
+2025-11-13 12:18:53,809 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:105378947
+2025-11-13 12:18:53,809 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: hsa:105378947
+2025-11-13 12:18:53,828 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:113219467
+2025-11-13 12:18:53,828 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: hsa:113219467
+2025-11-13 12:18:53,846 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:81399
+2025-11-13 12:18:53,847 - chromadb.segment.impl.metadata.sqlite - WARNING - Insert of existing embedding ID: hsa:81399
+2025-11-13 12:18:53,854 - rag_system - INFO - Saved graph with 37 nodes and 19 edges
+2025-11-13 12:18:53,854 - rag_system - INFO - RAG system saved to disk
+2025-11-13 12:18:53,854 - __main__ - INFO - Data fetched and saved: {'kegg': {'pathways': 10}}
+2025-11-13 12:18:53,855 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:18:53] "POST /api/fetch_data HTTP/1.1" 200 -
+2025-11-13 12:18:53,935 - __main__ - INFO - Stats requested: {'graph_nodes': 37, 'graph_edges': 19, 'vector_documents': 37, 'node_types': {'pathway': 10, 'disease': 23, 'target': 4}}
+2025-11-13 12:18:53,935 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:18:53] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 12:18:53,939 - __main__ - INFO - Graph data requested: 37 nodes, 19 edges
+2025-11-13 12:18:53,939 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:18:53] "GET /api/graph?type=&limit=100 HTTP/1.1" 200 -
+2025-11-13 12:19:53,117 - __main__ - INFO - Query received: Please show me the disease targets and potential therapies for obesity
+2025-11-13 12:19:53,130 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:19:53,130 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:19:53,130 - ollama_client - INFO - Using 5 context documents for RAG query
+2025-11-13 12:20:06,355 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:20:06,355 - ollama_client - INFO - Generated response of length 1294
+2025-11-13 12:20:06,355 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:20:06] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:22:04,171 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/populate_data.py', reloading
+2025-11-13 12:22:04,536 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 12:22:05,776 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:22:05,776 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:22:05,776 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:22:08,067 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:22:08,067 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:22:08,125 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:22:08,125 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:22:08,126 - rag_system - INFO - Loaded graph with 37 nodes and 19 edges
+2025-11-13 12:22:08,126 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:22:08,138 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:22:08,138 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:22:08,138 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:22:08,139 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:22:08,143 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 12:22:08,143 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 12:22:50,258 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/app.py', reloading
+2025-11-13 12:22:50,604 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 12:22:51,784 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:22:51,784 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:22:51,784 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:22:54,031 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:22:54,031 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:22:54,089 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:22:54,089 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:22:54,090 - rag_system - INFO - Loaded graph with 37 nodes and 19 edges
+2025-11-13 12:22:54,090 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:22:54,104 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:22:54,104 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:22:54,104 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:22:54,105 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:22:54,109 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 12:22:54,109 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 12:23:43,244 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/app.py', reloading
+2025-11-13 12:23:43,606 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 12:23:44,840 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:23:44,840 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:23:44,840 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:23:47,130 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:23:47,130 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:23:47,188 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:23:47,188 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:23:47,189 - rag_system - INFO - Loaded graph with 37 nodes and 19 edges
+2025-11-13 12:23:47,189 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:23:47,201 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:23:47,202 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:23:47,202 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:23:47,203 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:23:47,207 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 12:23:47,207 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 12:26:39,021 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:26:39,021 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:26:39,021 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:26:41,362 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:26:41,362 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:26:41,415 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:26:41,416 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:26:41,416 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 12:26:41,416 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:26:41,429 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:26:41,429 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:26:41,429 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:26:41,431 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:26:41,435 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:9999
+2025-11-13 12:26:41,435 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-13 12:26:41,435 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 12:26:42,702 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:26:42,702 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:26:42,702 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:26:45,023 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:26:45,023 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:26:45,080 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:26:45,080 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:26:45,081 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 12:26:45,081 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:26:45,094 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:26:45,094 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:26:45,094 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:26:45,096 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:26:45,099 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 12:26:45,099 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 12:26:45,109 - __main__ - INFO - Stats requested: {'graph_nodes': 133, 'graph_edges': 132, 'vector_documents': 133, 'node_types': {'pathway': 16, 'disease': 23, 'target': 4, 'gene': 90}}
+2025-11-13 12:26:45,109 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:26:45] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 12:26:45,371 - __main__ - INFO - Query received: What genes are involved in B-cell acute lymphoblastic leukemia?
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:102466751
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:100302278
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:79501
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:102465909
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:112268260
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:729759
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:124904706
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:105378947
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:113219467
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:81399
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_obesity
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_diabetes_type2
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_hypertension
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_alzheimers
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_cancer_lung
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_parkinsons
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_rheumatoid_arthritis
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_depression
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_EGFR
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_TNF_alpha
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_GLP1R
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_BACE1
+2025-11-13 12:26:45,507 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00001
+2025-11-13 12:26:45,508 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00002
+2025-11-13 12:26:45,508 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00003
+2025-11-13 12:26:45,508 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00004
+2025-11-13 12:26:45,509 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00005
+2025-11-13 12:26:45,509 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00006
+2025-11-13 12:26:45,509 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00007
+2025-11-13 12:26:45,509 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00008
+2025-11-13 12:26:45,509 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00009
+2025-11-13 12:26:45,509 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00010
+2025-11-13 12:26:45,513 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00011
+2025-11-13 12:26:45,513 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00012
+2025-11-13 12:26:45,513 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00013
+2025-11-13 12:26:45,513 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00014
+2025-11-13 12:26:45,513 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00015
+2025-11-13 12:26:45,515 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:26:45,515 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:27:32,196 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:27:32,197 - ollama_client - INFO - Generated constrained response of length 836
+2025-11-13 12:27:32,197 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:27:32] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:27:32,430 - __main__ - INFO - Graph data requested: 15 nodes, 15 edges
+2025-11-13 12:27:32,431 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:27:32] "GET /api/graph?type=disease&limit=5 HTTP/1.1" 200 -
+2025-11-13 12:27:32,661 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionGetEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:27:32,719 - clustering - INFO - Semantic clustering created 5 clusters from 90 nodes
+2025-11-13 12:27:32,720 - rag_system - INFO - Saved graph with 133 nodes and 132 edges
+2025-11-13 12:27:32,720 - rag_system - INFO - RAG system saved to disk
+2025-11-13 12:27:32,720 - __main__ - INFO - Clustering completed: 90 nodes in 5 clusters
+2025-11-13 12:27:32,721 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:27:32] "POST /api/cluster HTTP/1.1" 200 -
+2025-11-13 12:29:00,641 - __main__ - INFO - Stats requested: {'graph_nodes': 133, 'graph_edges': 132, 'vector_documents': 133, 'node_types': {'pathway': 16, 'disease': 23, 'target': 4, 'gene': 90}}
+2025-11-13 12:29:00,641 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:29:00] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 12:29:14,394 - __main__ - INFO - Graph data requested: 13 nodes, 11 edges
+2025-11-13 12:29:14,395 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:29:14] "GET /api/graph?type=gene&limit=10 HTTP/1.1" 200 -
+2025-11-13 12:29:45,752 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:29:45] "GET / HTTP/1.1" 200 -
+2025-11-13 12:29:45,974 - __main__ - INFO - Graph data requested: 117 nodes, 115 edges
+2025-11-13 12:29:45,975 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:29:45] "GET /api/graph?type=&limit=100 HTTP/1.1" 200 -
+2025-11-13 12:29:45,975 - __main__ - INFO - Stats requested: {'graph_nodes': 133, 'graph_edges': 132, 'vector_documents': 133, 'node_types': {'pathway': 16, 'disease': 23, 'target': 4, 'gene': 90}}
+2025-11-13 12:29:45,975 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:29:45] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 12:29:45,984 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:29:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-13 12:30:52,123 - __main__ - INFO - Query received: Please show me the disease targets and potential therapies for obesity
+2025-11-13 12:30:52,138 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:31:00,151 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:31:00,151 - ollama_client - INFO - Generated constrained response of length 347
+2025-11-13 12:31:00,152 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:31:00] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:31:48,964 - __main__ - INFO - Query received: Are there any connections between obesity and cancer?
+2025-11-13 12:31:48,976 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:31:55,557 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:31:55,558 - ollama_client - INFO - Generated constrained response of length 95
+2025-11-13 12:31:55,558 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:31:55] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:37:36,864 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/ollama_client.py', reloading
+2025-11-13 12:37:37,245 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 12:37:38,542 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:37:38,543 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:37:38,543 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:37:42,013 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:37:42,013 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:37:42,069 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:37:42,070 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:37:42,070 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 12:37:42,071 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:37:42,083 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:37:42,083 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:37:42,083 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:37:42,085 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:37:42,089 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 12:37:42,089 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 12:37:53,123 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/ollama_client.py', reloading
+2025-11-13 12:37:53,434 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 12:37:54,673 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:37:54,673 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:37:54,673 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:37:56,892 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:37:56,893 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:37:56,947 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:37:56,948 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:37:56,948 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 12:37:56,949 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:37:56,962 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:37:56,962 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:37:56,962 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:37:56,964 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:37:56,967 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 12:37:56,968 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 12:38:10,719 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:38:10,719 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:38:10,719 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:38:13,074 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:38:13,075 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:38:13,125 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:38:13,126 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:38:13,127 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 12:38:13,127 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:38:13,138 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:38:13,138 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:38:13,138 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:38:13,139 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:38:13,142 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:9999
+2025-11-13 12:38:13,142 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-13 12:38:13,143 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 12:38:14,421 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:38:14,422 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:38:14,422 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:38:16,775 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:38:16,775 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:38:16,833 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:38:16,834 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:38:16,834 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 12:38:16,834 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:38:16,848 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:38:16,848 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:38:16,848 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:38:16,850 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:38:16,854 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 12:38:16,854 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 12:38:16,859 - __main__ - INFO - Query received: Are there any connections between obesity and cancer?
+2025-11-13 12:38:17,012 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:102466751
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:100302278
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:79501
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:102465909
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:112268260
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:729759
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:124904706
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:105378947
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:113219467
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:81399
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_obesity
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_diabetes_type2
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_hypertension
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_alzheimers
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_cancer_lung
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_parkinsons
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_rheumatoid_arthritis
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_depression
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_EGFR
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_TNF_alpha
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_GLP1R
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_BACE1
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00001
+2025-11-13 12:38:17,013 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00002
+2025-11-13 12:38:17,014 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00003
+2025-11-13 12:38:17,015 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00004
+2025-11-13 12:38:17,015 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00005
+2025-11-13 12:38:17,015 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00006
+2025-11-13 12:38:17,015 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00007
+2025-11-13 12:38:17,015 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00008
+2025-11-13 12:38:17,015 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00009
+2025-11-13 12:38:17,015 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00010
+2025-11-13 12:38:17,019 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00011
+2025-11-13 12:38:17,019 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00012
+2025-11-13 12:38:17,019 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00013
+2025-11-13 12:38:17,019 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00014
+2025-11-13 12:38:17,019 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00015
+2025-11-13 12:38:17,020 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:38:17,020 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:38:30,290 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:38:30,290 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 12:38:30,291 - rag_system - INFO - Extracted subgraph with 107 nodes and 115 edges
+2025-11-13 12:38:30,293 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:38:30] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:42:05,680 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 12:42:05,681 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 12:42:05,681 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 12:42:07,781 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 12:42:07,781 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 12:42:07,836 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:42:07,837 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 12:42:07,838 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 12:42:07,838 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 12:42:07,850 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 12:42:07,850 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 12:42:07,850 - __main__ - INFO - Application initialized successfully
+2025-11-13 12:42:07,852 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 12:42:18,326 - __main__ - INFO - Query received: Are there any connections between obesity and cancer?
+2025-11-13 12:42:18,340 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:42:39,471 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:42:39,472 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 12:42:39,473 - rag_system - INFO - Extracted subgraph with 107 nodes and 115 edges
+2025-11-13 12:42:39,474 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:42:39] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:42:55,289 - __main__ - INFO - Query received: Are there any connections between obesity and cancer?
+2025-11-13 12:42:55,302 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:43:10,365 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:43:10,365 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 12:43:10,366 - rag_system - INFO - Extracted subgraph with 107 nodes and 115 edges
+2025-11-13 12:43:10,368 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:43:10] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:43:25,150 - __main__ - INFO - Query received: Are there any connections between obesity and cancer?
+2025-11-13 12:43:25,164 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:43:42,124 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:43:42,125 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 12:43:42,126 - rag_system - INFO - Extracted subgraph with 107 nodes and 115 edges
+2025-11-13 12:43:42,127 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:43:42] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:43:53,427 - __main__ - INFO - Stats requested: {'graph_nodes': 133, 'graph_edges': 132, 'vector_documents': 133, 'node_types': {'pathway': 16, 'disease': 23, 'target': 4, 'gene': 90}}
+2025-11-13 12:43:53,427 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:43:53] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 12:44:25,847 - __main__ - INFO - Query received: What genes are involved in lung cancer?
+2025-11-13 12:44:25,859 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:44:51,427 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:44:51,428 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 12:44:51,429 - rag_system - INFO - Extracted subgraph with 98 nodes and 104 edges
+2025-11-13 12:44:51,430 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:44:51] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:45:08,548 - __main__ - INFO - Query received: What pathways are associated with leukemia?
+2025-11-13 12:45:08,561 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:45:26,288 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:45:26,289 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 12:45:26,290 - rag_system - INFO - Extracted subgraph with 110 nodes and 116 edges
+2025-11-13 12:45:26,291 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:45:26] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:47:00,658 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:47:00] "GET / HTTP/1.1" 200 -
+2025-11-13 12:47:00,748 - __main__ - INFO - Graph data requested: 117 nodes, 115 edges
+2025-11-13 12:47:00,751 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:47:00] "GET /api/graph?type=&limit=100 HTTP/1.1" 200 -
+2025-11-13 12:47:00,751 - __main__ - INFO - Stats requested: {'graph_nodes': 133, 'graph_edges': 132, 'vector_documents': 133, 'node_types': {'pathway': 16, 'disease': 23, 'target': 4, 'gene': 90}}
+2025-11-13 12:47:00,751 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:47:00] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 12:47:31,098 - __main__ - INFO - Query received: Are there any connections between obesity and cancer?
+2025-11-13 12:47:31,111 - rag_system - INFO - Query returned 5 results
+2025-11-13 12:47:42,666 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 12:47:42,666 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 12:47:42,667 - rag_system - INFO - Extracted subgraph with 107 nodes and 115 edges
+2025-11-13 12:47:42,669 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:47:42] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 12:49:20,866 - clustering - INFO - K-means clustering produced 5 clusters
+2025-11-13 12:49:20,868 - rag_system - INFO - Saved graph with 133 nodes and 132 edges
+2025-11-13 12:49:20,868 - rag_system - INFO - RAG system saved to disk
+2025-11-13 12:49:20,868 - __main__ - INFO - Clustering completed: 133 nodes in 5 clusters
+2025-11-13 12:49:20,868 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:49:20] "POST /api/cluster HTTP/1.1" 200 -
+2025-11-13 12:49:20,872 - __main__ - INFO - Graph data requested: 117 nodes, 115 edges
+2025-11-13 12:49:20,873 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:49:20] "GET /api/graph?type=&limit=100 HTTP/1.1" 200 -
+2025-11-13 12:49:25,756 - __main__ - INFO - Graph data requested: 117 nodes, 115 edges
+2025-11-13 12:49:25,758 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 12:49:25] "GET /api/graph?type=&limit=100 HTTP/1.1" 200 -
+2025-11-13 13:02:17,823 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/ollama_client.py', reloading
+2025-11-13 13:02:18,129 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 13:02:19,291 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 13:02:19,291 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 13:02:19,291 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 13:02:21,906 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 13:02:21,906 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 13:02:21,963 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:02:21,963 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:02:21,964 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 13:02:21,964 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 13:02:21,976 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 13:02:21,976 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 13:02:21,976 - __main__ - INFO - Application initialized successfully
+2025-11-13 13:02:21,978 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 13:02:21,982 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 13:02:21,982 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 13:02:44,043 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/app.py', reloading
+2025-11-13 13:02:44,350 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 13:02:45,538 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 13:02:45,538 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 13:02:45,538 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 13:02:47,634 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 13:02:47,634 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 13:02:47,689 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:02:47,690 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:02:47,690 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 13:02:47,690 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 13:02:47,703 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 13:02:47,703 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 13:02:47,703 - __main__ - INFO - Application initialized successfully
+2025-11-13 13:02:47,704 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 13:02:47,708 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 13:02:47,708 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 13:02:50,719 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/app.py', reloading
+2025-11-13 13:02:51,019 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 13:02:52,225 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 13:02:52,226 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 13:02:52,226 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 13:02:54,379 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 13:02:54,379 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 13:02:54,434 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:02:54,435 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:02:54,435 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 13:02:54,435 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 13:02:54,448 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 13:02:54,448 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 13:02:54,448 - __main__ - INFO - Application initialized successfully
+2025-11-13 13:02:54,450 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 13:02:54,453 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 13:02:54,453 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 13:03:24,538 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/app.py', reloading
+2025-11-13 13:03:24,856 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 13:03:26,031 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 13:03:26,031 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 13:03:26,031 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 13:03:28,277 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 13:03:28,278 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 13:03:28,333 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:03:28,334 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:03:28,334 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 13:03:28,334 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 13:03:28,347 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 13:03:28,347 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 13:03:28,347 - __main__ - INFO - Application initialized successfully
+2025-11-13 13:03:28,348 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 13:03:28,352 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 13:03:28,352 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 13:05:07,262 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 13:05:07,262 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 13:05:07,262 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 13:05:09,398 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 13:05:09,398 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 13:05:09,454 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:05:09,455 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:05:09,455 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 13:05:09,455 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 13:05:09,468 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 13:05:09,468 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 13:05:09,468 - __main__ - INFO - Application initialized successfully
+2025-11-13 13:05:09,469 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 13:05:09,473 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:9999
+2025-11-13 13:05:09,473 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-13 13:05:09,473 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 13:05:10,682 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 13:05:10,682 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 13:05:10,682 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 13:05:12,858 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 13:05:12,858 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 13:05:12,917 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:05:12,918 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:05:12,919 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 13:05:12,919 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 13:05:12,932 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 13:05:12,932 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 13:05:12,932 - __main__ - INFO - Application initialized successfully
+2025-11-13 13:05:12,934 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 13:05:12,937 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 13:05:12,937 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 13:05:22,744 - __main__ - INFO - Query received: What is obesity? (web_search=False)
+2025-11-13 13:05:22,908 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:102466751
+2025-11-13 13:05:22,908 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:100302278
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:79501
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:102465909
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:112268260
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:729759
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:124904706
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:105378947
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:113219467
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:81399
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_obesity
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_diabetes_type2
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_hypertension
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_alzheimers
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_cancer_lung
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_parkinsons
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_rheumatoid_arthritis
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_depression
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_EGFR
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_TNF_alpha
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_GLP1R
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_BACE1
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00001
+2025-11-13 13:05:22,909 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00002
+2025-11-13 13:05:22,910 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00003
+2025-11-13 13:05:22,910 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00004
+2025-11-13 13:05:22,911 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00005
+2025-11-13 13:05:22,911 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00006
+2025-11-13 13:05:22,911 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00007
+2025-11-13 13:05:22,911 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00008
+2025-11-13 13:05:22,911 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00009
+2025-11-13 13:05:22,911 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00010
+2025-11-13 13:05:22,915 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00011
+2025-11-13 13:05:22,915 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00012
+2025-11-13 13:05:22,915 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00013
+2025-11-13 13:05:22,915 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00014
+2025-11-13 13:05:22,915 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00015
+2025-11-13 13:05:22,917 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:05:22,917 - rag_system - INFO - Query returned 5 results
+2025-11-13 13:05:41,189 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:05:41,190 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 13:05:41,191 - rag_system - INFO - Extracted subgraph with 29 nodes and 31 edges
+2025-11-13 13:05:41,191 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 13:05:41] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 13:05:50,167 - __main__ - INFO - Query received: Are there any connections between obesity and cancer? (web_search=True)
+2025-11-13 13:05:50,178 - rag_system - INFO - Query returned 5 results
+2025-11-13 13:06:02,449 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:06:02,450 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 13:06:02,451 - rag_system - INFO - Extracted subgraph with 107 nodes and 115 edges
+2025-11-13 13:06:02,451 - __main__ - INFO - Performing web search for: Are there any connections between obesity and cancer?
+2025-11-13 13:06:02,451 - web_search - INFO - Searching Swisscows for: Are there any connections between obesity and cancer?
+2025-11-13 13:06:02,711 - web_search - INFO - Found 0 search results
+2025-11-13 13:06:02,714 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 13:06:02] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 13:06:57,223 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/web_search.py', reloading
+2025-11-13 13:06:57,533 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 13:06:58,733 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 13:06:58,733 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 13:06:58,733 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 13:07:00,943 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 13:07:00,944 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 13:07:00,999 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:07:01,000 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:07:01,001 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 13:07:01,001 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 13:07:01,013 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 13:07:01,013 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 13:07:01,013 - __main__ - INFO - Application initialized successfully
+2025-11-13 13:07:01,014 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 13:07:01,017 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 13:07:01,018 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 13:07:18,600 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 13:07:18,600 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 13:07:18,600 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 13:07:20,777 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 13:07:20,777 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 13:07:20,835 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:07:20,836 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:07:20,836 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 13:07:20,836 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 13:07:20,849 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 13:07:20,849 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 13:07:20,849 - __main__ - INFO - Application initialized successfully
+2025-11-13 13:07:20,850 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 13:07:20,854 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:9999
+2025-11-13 13:07:20,854 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-13 13:07:20,854 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 13:07:22,066 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 13:07:22,067 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 13:07:22,067 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 13:07:24,402 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 13:07:24,402 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 13:07:24,457 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:07:24,458 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:07:24,458 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 13:07:24,458 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 13:07:24,471 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 13:07:24,471 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 13:07:24,471 - __main__ - INFO - Application initialized successfully
+2025-11-13 13:07:24,472 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 13:07:24,475 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 13:07:24,475 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 13:07:33,895 - __main__ - INFO - Query received: Are there any connections between obesity and cancer? (web_search=True)
+2025-11-13 13:07:34,056 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:102466751
+2025-11-13 13:07:34,056 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:100302278
+2025-11-13 13:07:34,056 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:79501
+2025-11-13 13:07:34,056 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:102465909
+2025-11-13 13:07:34,056 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:112268260
+2025-11-13 13:07:34,056 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:729759
+2025-11-13 13:07:34,056 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:124904706
+2025-11-13 13:07:34,056 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:105378947
+2025-11-13 13:07:34,056 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:113219467
+2025-11-13 13:07:34,056 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:81399
+2025-11-13 13:07:34,056 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_obesity
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_diabetes_type2
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_hypertension
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_alzheimers
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_cancer_lung
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_parkinsons
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_rheumatoid_arthritis
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_depression
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_EGFR
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_TNF_alpha
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_GLP1R
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_BACE1
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00001
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00002
+2025-11-13 13:07:34,057 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00003
+2025-11-13 13:07:34,058 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00004
+2025-11-13 13:07:34,058 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00005
+2025-11-13 13:07:34,059 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00006
+2025-11-13 13:07:34,059 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00007
+2025-11-13 13:07:34,059 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00008
+2025-11-13 13:07:34,059 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00009
+2025-11-13 13:07:34,059 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00010
+2025-11-13 13:07:34,063 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00011
+2025-11-13 13:07:34,063 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00012
+2025-11-13 13:07:34,063 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00013
+2025-11-13 13:07:34,063 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00014
+2025-11-13 13:07:34,063 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00015
+2025-11-13 13:07:34,064 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:07:34,064 - rag_system - INFO - Query returned 5 results
+2025-11-13 13:07:56,833 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:07:56,834 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 13:07:56,835 - rag_system - INFO - Extracted subgraph with 107 nodes and 115 edges
+2025-11-13 13:07:56,835 - __main__ - INFO - Performing web search for: Are there any connections between obesity and cancer?
+2025-11-13 13:07:56,835 - web_search - INFO - Searching DuckDuckGo for: Are there any connections between obesity and cancer?
+2025-11-13 13:07:58,135 - web_search - INFO - Found 10 search results
+2025-11-13 13:07:58,136 - __main__ - INFO - Found 10 search results
+2025-11-13 13:08:56,745 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:08:56,746 - ollama_client - INFO - Filtered 0 relevant URLs from 10 results
+2025-11-13 13:08:56,747 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 13:08:56] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 13:09:30,816 - werkzeug - INFO -  * Detected change in '/home/edward/oakeley_ideas/celia/BetterFeeling/ollama_client.py', reloading
+2025-11-13 13:09:31,129 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 13:09:32,310 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 13:09:32,310 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 13:09:32,310 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 13:09:34,577 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 13:09:34,577 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 13:09:34,634 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:09:34,635 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:09:34,636 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 13:09:34,636 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 13:09:34,648 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 13:09:34,649 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 13:09:34,649 - __main__ - INFO - Application initialized successfully
+2025-11-13 13:09:34,650 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 13:09:34,653 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 13:09:34,653 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 13:09:46,059 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 13:09:46,059 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 13:09:46,059 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 13:09:48,151 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 13:09:48,151 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 13:09:48,206 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:09:48,207 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:09:48,207 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 13:09:48,207 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 13:09:48,220 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 13:09:48,220 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 13:09:48,220 - __main__ - INFO - Application initialized successfully
+2025-11-13 13:09:48,221 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 13:09:48,225 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:9999
+2025-11-13 13:09:48,225 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-13 13:09:48,225 - werkzeug - INFO -  * Restarting with stat
+2025-11-13 13:09:49,430 - rate_limiter - INFO - Rate limiter manager initialized with 3 APIs
+2025-11-13 13:09:49,431 - data_fetchers - INFO - DataGouvFetcher initialized
+2025-11-13 13:09:49,431 - data_fetchers - INFO - HetIOFetcher initialized
+2025-11-13 13:09:51,659 - data_fetchers - INFO - KEGGFetcher initialized
+2025-11-13 13:09:51,659 - data_fetchers - INFO - DataFetcherManager initialized with all fetchers
+2025-11-13 13:09:51,714 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:09:51,715 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:09:51,716 - rag_system - INFO - Loaded graph with 133 nodes and 132 edges
+2025-11-13 13:09:51,716 - rag_system - INFO - RAGGraphSystem initialized with vector DB at ./data/vectors
+2025-11-13 13:09:51,728 - ollama_client - INFO - OllamaClient initialized with model qwen3:4b
+2025-11-13 13:09:51,728 - clustering - INFO - ClusteringAnalyzer initialized
+2025-11-13 13:09:51,728 - __main__ - INFO - Application initialized successfully
+2025-11-13 13:09:51,729 - __main__ - INFO - Starting server on localhost:9999
+2025-11-13 13:09:51,733 - werkzeug - WARNING -  * Debugger is active!
+2025-11-13 13:09:51,733 - werkzeug - INFO -  * Debugger PIN: 888-627-821
+2025-11-13 13:10:10,599 - __main__ - INFO - Query received: Are there any connections between obesity and cancer? (web_search=True)
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:102466751
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:100302278
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:79501
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:102465909
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:112268260
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:729759
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:124904706
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:105378947
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:113219467
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: hsa:81399
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_obesity
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_diabetes_type2
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_hypertension
+2025-11-13 13:10:10,769 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_alzheimers
+2025-11-13 13:10:10,770 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_cancer_lung
+2025-11-13 13:10:10,770 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_parkinsons
+2025-11-13 13:10:10,770 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_rheumatoid_arthritis
+2025-11-13 13:10:10,770 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: sample_depression
+2025-11-13 13:10:10,770 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_EGFR
+2025-11-13 13:10:10,770 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_TNF_alpha
+2025-11-13 13:10:10,770 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_GLP1R
+2025-11-13 13:10:10,770 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: target_BACE1
+2025-11-13 13:10:10,770 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00001
+2025-11-13 13:10:10,770 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00002
+2025-11-13 13:10:10,770 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00003
+2025-11-13 13:10:10,771 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00004
+2025-11-13 13:10:10,771 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00005
+2025-11-13 13:10:10,771 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00006
+2025-11-13 13:10:10,772 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00007
+2025-11-13 13:10:10,772 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00008
+2025-11-13 13:10:10,772 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00009
+2025-11-13 13:10:10,772 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00010
+2025-11-13 13:10:10,775 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00011
+2025-11-13 13:10:10,776 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00012
+2025-11-13 13:10:10,776 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00013
+2025-11-13 13:10:10,776 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00014
+2025-11-13 13:10:10,776 - chromadb.segment.impl.vector.local_persistent_hnsw - WARNING - Add of existing embedding ID: H00015
+2025-11-13 13:10:10,777 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:10:10,777 - rag_system - INFO - Query returned 5 results
+2025-11-13 13:10:24,396 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:10:24,396 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 13:10:24,397 - rag_system - INFO - Extracted subgraph with 107 nodes and 115 edges
+2025-11-13 13:10:24,397 - __main__ - INFO - Performing web search for: Are there any connections between obesity and cancer?
+2025-11-13 13:10:24,397 - web_search - INFO - Searching DuckDuckGo for: Are there any connections between obesity and cancer?
+2025-11-13 13:10:25,747 - web_search - INFO - Found 10 search results
+2025-11-13 13:10:25,748 - __main__ - INFO - Found 10 search results
+2025-11-13 13:11:03,022 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:11:03,023 - ollama_client - INFO - Filtered 3 relevant URLs from 10 results
+2025-11-13 13:11:03,023 - __main__ - INFO - Filtered to 3 relevant URLs
+2025-11-13 13:11:53,566 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:11:53,566 - ollama_client - INFO - Summarized content from https://pmc.ncbi.nlm.nih.gov/articles/PMC12192298/
+2025-11-13 13:11:53,849 - web_search - WARNING - Error fetching URL https://www.thelancet.com/journals/lanepe/article/PIIS2666-7762(24)00277-1/fulltext: 403 Client Error: Forbidden for url: https://www.thelancet.com/journals/lanepe/article/PIIS2666-7762(24)00277-1/fulltext
+2025-11-13 13:12:38,186 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:12:38,187 - ollama_client - INFO - Summarized content from https://pmc.ncbi.nlm.nih.gov/articles/PMC11654459/
+2025-11-13 13:12:38,213 - chromadb.telemetry.product.posthog - ERROR - Failed to send telemetry event CollectionAddEvent: capture() takes 1 positional argument but 3 were given
+2025-11-13 13:12:38,447 - rag_system - INFO - Saved graph with 146 nodes and 171 edges
+2025-11-13 13:12:38,447 - rag_system - INFO - RAG system saved to disk
+2025-11-13 13:12:38,448 - __main__ - INFO - Added new entities from web research to graph
+2025-11-13 13:12:38,449 - rag_system - INFO - Extracted subgraph with 120 nodes and 154 edges
+2025-11-13 13:12:38,451 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 13:12:38] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 13:12:52,948 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 13:12:52] "GET / HTTP/1.1" 200 -
+2025-11-13 13:13:00,607 - __main__ - INFO - Stats requested: {'graph_nodes': 146, 'graph_edges': 171, 'vector_documents': 146, 'node_types': {'pathway': 16, 'disease': 27, 'target': 4, 'gene': 90, 'entity': 9}}
+2025-11-13 13:13:00,607 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 13:13:00] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 13:46:56,695 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 13:46:56] "GET / HTTP/1.1" 200 -
+2025-11-13 13:46:56,788 - __main__ - INFO - Graph data requested: 121 nodes, 123 edges
+2025-11-13 13:46:56,789 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 13:46:56] "GET /api/graph?type=&limit=100 HTTP/1.1" 200 -
+2025-11-13 13:46:56,789 - __main__ - INFO - Stats requested: {'graph_nodes': 146, 'graph_edges': 171, 'vector_documents': 146, 'node_types': {'pathway': 16, 'disease': 27, 'target': 4, 'gene': 90, 'entity': 9}}
+2025-11-13 13:46:56,790 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 13:46:56] "GET /api/stats HTTP/1.1" 200 -
+2025-11-13 13:47:25,707 - __main__ - INFO - Query received: Are there any connections between obesity and cancer? (web_search=True)
+2025-11-13 13:47:25,721 - rag_system - INFO - Query returned 5 results
+2025-11-13 13:47:46,701 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:47:46,701 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 13:47:46,702 - rag_system - INFO - Extracted subgraph with 120 nodes and 154 edges
+2025-11-13 13:47:46,702 - __main__ - INFO - Performing web search for: Are there any connections between obesity and cancer?
+2025-11-13 13:47:46,702 - web_search - INFO - Searching DuckDuckGo for: Are there any connections between obesity and cancer?
+2025-11-13 13:47:47,821 - web_search - INFO - Found 10 search results
+2025-11-13 13:47:47,822 - __main__ - INFO - Found 10 search results
+2025-11-13 13:48:39,161 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:48:39,162 - ollama_client - INFO - Filtered 3 relevant URLs from 10 results
+2025-11-13 13:48:39,162 - __main__ - INFO - Filtered to 3 relevant URLs
+2025-11-13 13:49:15,139 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:49:15,140 - ollama_client - INFO - Summarized content from https://pmc.ncbi.nlm.nih.gov/articles/PMC9857053/
+2025-11-13 13:49:50,481 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:49:50,481 - ollama_client - INFO - Summarized content from https://pmc.ncbi.nlm.nih.gov/articles/PMC11654459/
+2025-11-13 13:49:58,068 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:49:58,068 - ollama_client - INFO - Summarized content from https://www.cancer.gov/about-cancer/causes-prevention/risk/obesity/obesity-fact-sheet
+2025-11-13 13:49:58,133 - rag_system - INFO - Saved graph with 149 nodes and 180 edges
+2025-11-13 13:49:58,133 - rag_system - INFO - RAG system saved to disk
+2025-11-13 13:49:58,133 - __main__ - INFO - Added new entities from web research to graph
+2025-11-13 13:49:58,134 - rag_system - INFO - Extracted subgraph with 123 nodes and 163 edges
+2025-11-13 13:49:58,136 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 13:49:58] "POST /api/query HTTP/1.1" 200 -
+2025-11-13 13:54:55,289 - __main__ - INFO - Query received: are there any genetic factors that influence resistance to COVID-19? (web_search=True)
+2025-11-13 13:54:55,303 - rag_system - INFO - Query returned 5 results
+2025-11-13 13:55:10,133 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:55:10,133 - ollama_client - INFO - Generated constrained response with 5 sources
+2025-11-13 13:55:10,134 - rag_system - INFO - Extracted subgraph with 115 nodes and 155 edges
+2025-11-13 13:55:10,134 - __main__ - INFO - Performing web search for: are there any genetic factors that influence resistance to COVID-19?
+2025-11-13 13:55:10,134 - web_search - INFO - Searching DuckDuckGo for: are there any genetic factors that influence resistance to COVID-19?
+2025-11-13 13:55:11,318 - web_search - INFO - Found 10 search results
+2025-11-13 13:55:11,318 - __main__ - INFO - Found 10 search results
+2025-11-13 13:56:02,196 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:56:02,196 - ollama_client - WARNING - Could not parse Ollama response, using simple heuristic
+2025-11-13 13:56:02,196 - ollama_client - ERROR - Error filtering URLs: name 'urlparse' is not defined
+2025-11-13 13:56:02,197 - __main__ - INFO - Filtered to 3 relevant URLs
+2025-11-13 13:56:33,829 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:56:33,830 - ollama_client - INFO - Summarized content from https://pmc.ncbi.nlm.nih.gov/articles/PMC8135169/
+2025-11-13 13:56:59,046 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:56:59,047 - ollama_client - INFO - Summarized content from https://scienceofbiogenetics.com/articles/how-your-genetics-can-determine-whether-you-get-covid-19-or-not
+2025-11-13 13:57:40,901 - httpx - INFO - HTTP Request: POST http://localhost:11434/api/generate "HTTP/1.1 200 OK"
+2025-11-13 13:57:40,902 - ollama_client - INFO - Summarized content from https://pmc.ncbi.nlm.nih.gov/articles/PMC7323230/
+2025-11-13 13:57:40,903 - rag_system - INFO - Saved graph with 160 nodes and 213 edges
+2025-11-13 13:57:40,903 - rag_system - INFO - RAG system saved to disk
+2025-11-13 13:57:40,903 - __main__ - INFO - Added new entities from web research to graph
+2025-11-13 13:57:40,904 - rag_system - INFO - Extracted subgraph with 126 nodes and 188 edges
+2025-11-13 13:57:40,905 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 13:57:40] "POST /api/query HTTP/1.1" 200 -

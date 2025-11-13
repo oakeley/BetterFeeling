@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetterFeeling - Disease and Drug Analysis</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-box h3 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .sidebar h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #5568d3;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .visualization {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        #graph-container {
+            width: 100%;
+            height: 700px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #graph-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .node {
+            cursor: pointer;
+        }
+
+        .node circle {
+            stroke: #fff;
+            stroke-width: 2px;
+        }
+
+        .node text {
+            font-size: 10px;
+            pointer-events: none;
+        }
+
+        .link {
+            stroke: #999;
+            stroke-opacity: 0.6;
+            fill: none;
+        }
+
+        .query-response {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .query-response h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 10px;
+            color: #667eea;
+        }
+
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .success {
+            background: #efe;
+            color: #363;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .info-panel {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .info-panel h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .zoom-controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .zoom-btn {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zoom-btn:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BetterFeeling - Disease and Drug Analysis Platform</h1>
+            <p>Explore disease mechanisms, drug targets, and treatment pathways</p>
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>Graph Nodes</h3>
+                    <p id="stat-nodes">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Graph Edges</h3>
+                    <p id="stat-edges">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Documents</h3>
+                    <p id="stat-docs">0</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <h2>Controls</h2>
+
+                <div class="control-group">
+                    <label>Data Source</label>
+                    <select id="data-source">
+                        <option value="all">All Sources</option>
+                        <option value="hetio">HetIO</option>
+                        <option value="kegg">KEGG</option>
+                    </select>
+                    <button id="fetch-btn" onclick="fetchData()" style="margin-top: 10px;">Fetch Data</button>
+                    <div id="fetch-status" style="font-size: 12px; margin-top: 5px; color: #667eea;"></div>
+                </div>
+
+                <div class="control-group">
+                    <label>Query</label>
+                    <textarea id="query-input" placeholder="Ask a question about diseases, drugs, or pathways..."></textarea>
+                    <button id="query-btn" onclick="submitQuery()" style="margin-top: 10px;">Submit Query</button>
+                    <div id="query-status" style="font-size: 12px; margin-top: 5px; color: #667eea;"></div>
+                </div>
+
+                <div class="control-group">
+                    <label>Filter by Type</label>
+                    <select id="node-type">
+                        <option value="">All Types</option>
+                        <option value="disease">Disease</option>
+                        <option value="compound">Compound</option>
+                        <option value="pathway">Pathway</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Filter by Keyword</label>
+                    <input type="text" id="keyword-input" placeholder="Enter keyword...">
+                    <button id="filter-btn" onclick="filterNodes()" style="margin-top: 10px;">Apply Filter</button>
+                    <div id="filter-status" style="font-size: 12px; margin-top: 5px; color: #667eea;"></div>
+                </div>
+
+                <div class="control-group">
+                    <label>Clustering Method</label>
+                    <select id="cluster-method">
+                        <option value="kmeans">K-Means (Topology)</option>
+                        <option value="semantic">Semantic (Meaning)</option>
+                        <option value="dbscan">DBSCAN (Density)</option>
+                    </select>
+                    <label>Number of Clusters</label>
+                    <input type="number" id="n-clusters" value="5" min="2" max="20">
+                    <button id="cluster-btn" onclick="clusterNodes()" style="margin-top: 10px;">Cluster</button>
+                    <div id="cluster-status" style="font-size: 12px; margin-top: 5px; color: #667eea;"></div>
+                </div>
+
+                <button onclick="loadGraph()">Refresh Graph</button>
+
+                <div class="loading" id="loading">Loading...</div>
+                <div class="error" id="error"></div>
+            </aside>
+
+            <main>
+                <div class="query-response" id="query-response">
+                    <h3>Query Response</h3>
+                    <p id="response-text"></p>
+                    <div id="source-details" style="margin-top: 15px; padding: 10px; background: #f0f0f0; border-radius: 5px; display: none;">
+                        <h4 style="margin-bottom: 10px;">Sources Used:</h4>
+                        <ul id="source-list" style="list-style-type: none; padding: 0;"></ul>
+                    </div>
+                    <div id="research-links" style="margin-top: 15px; padding: 10px; background: #e8f4f8; border-radius: 5px; display: none;">
+                        <h4 style="margin-bottom: 10px;">Research Evidence:</h4>
+                        <ul id="research-list" style="list-style-type: none; padding: 0;"></ul>
+                    </div>
+                    <button id="show-in-graph-btn" onclick="showQueryInGraph()" style="margin-top: 10px; display: none;">Show Connections in Graph</button>
+                </div>
+
+                <div class="visualization">
+                    <h2>Interactive Graph Visualization</h2>
+                    <div id="graph-container">
+                        <div class="zoom-controls">
+                            <button class="zoom-btn" onclick="zoomIn()">+</button>
+                            <button class="zoom-btn" onclick="zoomOut()">-</button>
+                            <button class="zoom-btn" onclick="resetZoom()">⊙</button>
+                        </div>
+                        <svg id="graph-svg"></svg>
+                    </div>
+                </div>
+
+                <div class="info-panel" id="info-panel" style="display: none;">
+                    <h2>Node Information</h2>
+                    <div id="node-info"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        let graphData = { nodes: [], links: [] };
+        let svg, g, simulation, zoom;
+
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        function showError(message) {
+            const errorEl = document.getElementById('error');
+            errorEl.textContent = message;
+            errorEl.style.display = 'block';
+            setTimeout(() => errorEl.style.display = 'none', 5000);
+        }
+
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/stats');
+                const stats = await response.json();
+                document.getElementById('stat-nodes').textContent = stats.graph_nodes || 0;
+                document.getElementById('stat-edges').textContent = stats.graph_edges || 0;
+                document.getElementById('stat-docs').textContent = stats.vector_documents || 0;
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        async function fetchData() {
+            const source = document.getElementById('data-source').value;
+            const fetchBtn = document.getElementById('fetch-btn');
+            const fetchStatus = document.getElementById('fetch-status');
+
+            fetchBtn.disabled = true;
+            fetchBtn.textContent = 'Fetching...';
+            fetchStatus.textContent = `Connecting to ${source} API...`;
+            fetchStatus.style.color = '#667eea';
+
+            try {
+                const response = await fetch('/api/fetch_data', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ source })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server returned ${response.status}`);
+                }
+
+                fetchStatus.textContent = 'Processing data...';
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    fetchStatus.textContent = `Success! Fetched: ${JSON.stringify(result.fetched)}`;
+                    fetchStatus.style.color = '#2d8659';
+                    await loadStats();
+                    await loadGraph();
+                    setTimeout(() => {
+                        fetchStatus.textContent = '';
+                        fetchBtn.disabled = false;
+                        fetchBtn.textContent = 'Fetch Data';
+                    }, 5000);
+                } else {
+                    fetchStatus.textContent = 'Data fetch completed with warnings';
+                    fetchStatus.style.color = '#d97706';
+                    fetchBtn.disabled = false;
+                    fetchBtn.textContent = 'Fetch Data';
+                }
+            } catch (error) {
+                fetchStatus.textContent = 'Error: ' + error.message;
+                fetchStatus.style.color = '#dc2626';
+                fetchBtn.disabled = false;
+                fetchBtn.textContent = 'Fetch Data';
+                console.error('Fetch error:', error);
+            }
+        }
+
+        let currentQueryGraphData = null;
+
+        async function submitQuery() {
+            const query = document.getElementById('query-input').value;
+            const queryBtn = document.getElementById('query-btn');
+            const queryStatus = document.getElementById('query-status');
+            const responseEl = document.getElementById('query-response');
+            const sourceDetails = document.getElementById('source-details');
+            const sourceList = document.getElementById('source-list');
+            const researchLinks = document.getElementById('research-links');
+            const researchList = document.getElementById('research-list');
+            const showGraphBtn = document.getElementById('show-in-graph-btn');
+
+            if (!query) {
+                queryStatus.textContent = 'Please enter a query first';
+                queryStatus.style.color = '#dc2626';
+                return;
+            }
+
+            queryBtn.disabled = true;
+            queryBtn.textContent = 'Processing...';
+            queryStatus.textContent = 'Searching knowledge base...';
+            queryStatus.style.color = '#667eea';
+            responseEl.style.display = 'none';
+            sourceDetails.style.display = 'none';
+            researchLinks.style.display = 'none';
+            showGraphBtn.style.display = 'none';
+
+            try {
+                queryStatus.textContent = 'Generating response with Ollama...';
+
+                const response = await fetch('/api/query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query, web_search: true })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server returned ${response.status}`);
+                }
+
+                queryStatus.textContent = 'Searching web for research evidence...';
+
+                const result = await response.json();
+
+                queryStatus.textContent = 'Response generated!';
+                queryStatus.style.color = '#2d8659';
+
+                document.getElementById('response-text').textContent = result.response;
+
+                // Show source details
+                if (result.source_details && result.source_details.length > 0) {
+                    sourceList.innerHTML = '';
+                    result.source_details.forEach((source, index) => {
+                        const li = document.createElement('li');
+                        li.style.marginBottom = '8px';
+                        li.style.padding = '5px';
+                        li.style.background = 'white';
+                        li.style.borderRadius = '3px';
+                        li.innerHTML = `<strong>${source.name}</strong> (${source.id})<br>` +
+                                      `<span style="font-size: 11px; color: #666;">Type: ${source.type}, Relevance: ${(1 - source.distance).toFixed(2)}</span>`;
+                        sourceList.appendChild(li);
+                    });
+                    sourceDetails.style.display = 'block';
+                }
+
+                // Show research links
+                if (result.research_links && result.research_links.length > 0) {
+                    researchList.innerHTML = '';
+                    result.research_links.forEach((research, index) => {
+                        const li = document.createElement('li');
+                        li.style.marginBottom = '12px';
+                        li.style.padding = '8px';
+                        li.style.background = 'white';
+                        li.style.borderRadius = '5px';
+                        li.style.borderLeft = '3px solid #2d8659';
+
+                        let factsHtml = '';
+                        if (research.key_facts && research.key_facts.length > 0) {
+                            factsHtml = '<ul style="margin: 5px 0 0 15px; font-size: 11px;">';
+                            research.key_facts.forEach(fact => {
+                                factsHtml += `<li style="margin: 3px 0;">${fact}</li>`;
+                            });
+                            factsHtml += '</ul>';
+                        }
+
+                        li.innerHTML = `
+                            <div style="margin-bottom: 5px;">
+                                <a href="${research.url}" target="_blank" style="color: #2d8659; font-weight: bold; text-decoration: none;">
+                                    ${research.title}
+                                </a>
+                                <span style="margin-left: 8px; font-size: 10px; color: #888;">Relevance: ${research.relevance_score}/10</span>
+                            </div>
+                            <p style="font-size: 12px; color: #555; margin: 5px 0;">${research.summary}</p>
+                            ${factsHtml}
+                        `;
+                        researchList.appendChild(li);
+                    });
+                    researchLinks.style.display = 'block';
+
+                    if (result.new_entities_added) {
+                        queryStatus.textContent = `Found ${result.research_links.length} research sources. New entities added to graph!`;
+                    } else {
+                        queryStatus.textContent = `Found ${result.research_links.length} research sources.`;
+                    }
+                }
+
+                // Store graph data and show button if we have relevant nodes
+                if (result.graph_data && result.graph_data.nodes.length > 0) {
+                    currentQueryGraphData = result.graph_data;
+                    showGraphBtn.style.display = 'block';
+                    if (!result.research_links || result.research_links.length === 0) {
+                        queryStatus.textContent = `Found ${result.relevant_nodes.length} relevant nodes. Click "Show Connections in Graph" to visualize.`;
+                    }
+                }
+
+                responseEl.style.display = 'block';
+                responseEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                setTimeout(() => {
+                    if (!currentQueryGraphData || currentQueryGraphData.nodes.length === 0) {
+                        queryStatus.textContent = '';
+                    }
+                    queryBtn.disabled = false;
+                    queryBtn.textContent = 'Submit Query';
+                }, 5000);
+            } catch (error) {
+                queryStatus.textContent = 'Error: ' + error.message;
+                queryStatus.style.color = '#dc2626';
+                queryBtn.disabled = false;
+                queryBtn.textContent = 'Submit Query';
+                console.error('Query error:', error);
+            }
+        }
+
+        function showQueryInGraph() {
+            if (currentQueryGraphData) {
+                graphData = currentQueryGraphData;
+                renderGraph();
+                document.getElementById('graph-container').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        async function loadGraph() {
+            const nodeType = document.getElementById('node-type').value;
+            showLoading();
+
+            try {
+                const url = `/api/graph?type=${nodeType}&limit=100`;
+                const response = await fetch(url);
+                graphData = await response.json();
+                hideLoading();
+
+                renderGraph();
+            } catch (error) {
+                hideLoading();
+                showError('Error loading graph: ' + error.message);
+            }
+        }
+
+        function renderGraph() {
+            const container = document.getElementById('graph-container');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            d3.select('#graph-svg').selectAll('*').remove();
+
+            svg = d3.select('#graph-svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            zoom = d3.zoom()
+                .scaleExtent([0.1, 10])
+                .on('zoom', (event) => {
+                    g.attr('transform', event.transform);
+                });
+
+            svg.call(zoom);
+
+            g = svg.append('g');
+
+            simulation = d3.forceSimulation(graphData.nodes)
+                .force('link', d3.forceLink(graphData.links).id(d => d.id).distance(100))
+                .force('charge', d3.forceManyBody().strength(-300))
+                .force('center', d3.forceCenter(width / 2, height / 2))
+                .force('collision', d3.forceCollide().radius(30));
+
+            const link = g.append('g')
+                .selectAll('line')
+                .data(graphData.links)
+                .enter().append('line')
+                .attr('class', 'link')
+                .attr('stroke-width', 2);
+
+            const node = g.append('g')
+                .selectAll('g')
+                .data(graphData.nodes)
+                .enter().append('g')
+                .attr('class', 'node')
+                .call(d3.drag()
+                    .on('start', dragstarted)
+                    .on('drag', dragged)
+                    .on('end', dragended))
+                .on('click', (event, d) => showNodeInfo(d));
+
+            const colorScale = d3.scaleOrdinal()
+                .domain(['disease', 'compound', 'pathway'])
+                .range(['#ff6b6b', '#4ecdc4', '#45b7d1']);
+
+            node.append('circle')
+                .attr('r', 10)
+                .attr('fill', d => colorScale(d.type || 'unknown'));
+
+            node.append('text')
+                .attr('dx', 12)
+                .attr('dy', 4)
+                .text(d => d.name || d.id.substring(0, 15));
+
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+
+                node.attr('transform', d => `translate(${d.x},${d.y})`);
+            });
+        }
+
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+
+        function showNodeInfo(node) {
+            const infoPanel = document.getElementById('info-panel');
+            const nodeInfo = document.getElementById('node-info');
+
+            let html = `<p><strong>ID:</strong> ${node.id}</p>`;
+            html += `<p><strong>Type:</strong> ${node.type || 'Unknown'}</p>`;
+
+            for (const [key, value] of Object.entries(node)) {
+                if (key !== 'id' && key !== 'type' && key !== 'x' && key !== 'y' && key !== 'vx' && key !== 'vy' && key !== 'index') {
+                    html += `<p><strong>${key}:</strong> ${JSON.stringify(value)}</p>`;
+                }
+            }
+
+            nodeInfo.innerHTML = html;
+            infoPanel.style.display = 'block';
+        }
+
+        async function filterNodes() {
+            const keyword = document.getElementById('keyword-input').value;
+            const nodeType = document.getElementById('node-type').value;
+            const filterBtn = document.getElementById('filter-btn');
+            const filterStatus = document.getElementById('filter-status');
+
+            if (!keyword && !nodeType) {
+                filterStatus.textContent = 'Enter a keyword or select a type';
+                filterStatus.style.color = '#d97706';
+                await loadGraph();
+                return;
+            }
+
+            filterBtn.disabled = true;
+            filterBtn.textContent = 'Filtering...';
+            filterStatus.textContent = 'Searching graph...';
+            filterStatus.style.color = '#667eea';
+
+            try {
+                const response = await fetch('/api/filter', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ keyword, type: nodeType })
+                });
+
+                const result = await response.json();
+
+                filterStatus.textContent = `Found ${result.count} matching nodes`;
+                filterStatus.style.color = '#2d8659';
+
+                console.log('Filtered nodes:', result);
+
+                setTimeout(() => {
+                    filterStatus.textContent = '';
+                    filterBtn.disabled = false;
+                    filterBtn.textContent = 'Apply Filter';
+                }, 3000);
+            } catch (error) {
+                filterStatus.textContent = 'Error: ' + error.message;
+                filterStatus.style.color = '#dc2626';
+                filterBtn.disabled = false;
+                filterBtn.textContent = 'Apply Filter';
+                console.error('Filter error:', error);
+            }
+        }
+
+        async function clusterNodes() {
+            const method = document.getElementById('cluster-method').value;
+            const nClusters = parseInt(document.getElementById('n-clusters').value);
+            const nodeType = document.getElementById('node-type').value;
+            const clusterBtn = document.getElementById('cluster-btn');
+            const clusterStatus = document.getElementById('cluster-status');
+
+            const useSemantic = (method === 'semantic');
+            const actualMethod = useSemantic ? 'kmeans' : method;
+
+            clusterBtn.disabled = true;
+            clusterBtn.textContent = 'Clustering...';
+
+            if (useSemantic) {
+                clusterStatus.textContent = 'Extracting embeddings from vector DB...';
+            } else {
+                clusterStatus.textContent = 'Analyzing graph topology...';
+            }
+            clusterStatus.style.color = '#667eea';
+
+            try {
+                const response = await fetch('/api/cluster', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        method: actualMethod,
+                        n_clusters: nClusters,
+                        type: nodeType,
+                        semantic: useSemantic
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    clusterStatus.textContent = `Created ${result.n_clusters} clusters using ${result.method}`;
+                    clusterStatus.style.color = '#2d8659';
+                    await loadGraph();
+
+                    setTimeout(() => {
+                        clusterStatus.textContent = '';
+                        clusterBtn.disabled = false;
+                        clusterBtn.textContent = 'Cluster';
+                    }, 3000);
+                } else {
+                    throw new Error(result.error || 'Clustering failed');
+                }
+            } catch (error) {
+                clusterStatus.textContent = 'Error: ' + error.message;
+                clusterStatus.style.color = '#dc2626';
+                clusterBtn.disabled = false;
+                clusterBtn.textContent = 'Cluster';
+                console.error('Clustering error:', error);
+            }
+        }
+
+        function zoomIn() {
+            svg.transition().call(zoom.scaleBy, 1.3);
+        }
+
+        function zoomOut() {
+            svg.transition().call(zoom.scaleBy, 0.7);
+        }
+
+        function resetZoom() {
+            svg.transition().call(zoom.transform, d3.zoomIdentity);
+        }
+
+        loadStats();
+        loadGraph();
+    </script>
+</body>
+</html>
